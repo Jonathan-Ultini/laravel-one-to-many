@@ -22,6 +22,17 @@
             <label for="end_date" class="form-label">Data di Fine</label>
             <input type="date" class="form-control" id="end_date" name="end_date" value="{{ $project->end_date }}">
         </div>
+        <div class="mb-3">
+        <label for="type_id">Tipologia</label>
+        <select name="type_id" id="type_id" class="form-control">
+            <option value="">Seleziona una tipologia</option>
+            @foreach($types as $type)
+                <option value="{{ $type->id }}" {{ $project->type_id == $type->id ? 'selected' : '' }}>
+                    {{ $type->name }}
+                </option>
+            @endforeach
+        </select>
+        </div>
         <button type="submit" class="btn btn-primary">Aggiorna Progetto</button>
     </form>
 </div>
