@@ -1,0 +1,20 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class TypeSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run()
+    {
+        $types = ['Full-stack', 'Front-end', 'Back-end', 'Database'];
+        foreach ($types as $type) {
+            Type::create(['name' => $type]);
+        }
+    }
+}
