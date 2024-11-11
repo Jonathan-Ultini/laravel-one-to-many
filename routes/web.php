@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('projects', ProjectController::class);
+});
+
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('types', TypeController::class);
 });
